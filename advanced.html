@@ -1,89 +1,63 @@
-/* Image Styling */
-img {
-    width: 100px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+<!DOCTYPE html>
+<html>
 
-/* Upper Div Styling */
-#upperDiv {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
+    <head> 
+        <title>
+            Advance Search
+        </title>
+        <link rel="stylesheet" href="advanceSearch.css">
+    </head>
 
-/* Input Styling */
-input {
-    width: 500px;
-    height: 25px;
-    margin-left: 30px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+    <body>
+        
+        <div id="upperDiv">
+            <img src="googleLogo.jpg">
+            <a href="index.html" style="padding-left: 1000px; padding-bottom: 10px;">Google Search</a>
+        </div>
+        <h1>Advance Search</h1>
+        <hr>
+        
+        <div style="margin-top: 100px;">
 
-/* Heading 1 Styling */
-h1 {
-    color: #1f98a8;
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
-}
+            <div class="sections" style="padding-bottom: 10px;">
+                <h2>Find pages with...</h2>
+                <p style="padding-left: 900px;">To do this in the search box.</p>
+            </div>
+            
+            
+            <form action="https://www.google.com/search">
 
-/* Heading 2 Styling */
-h2 {
-    font-size: 1.5em;
-    font-weight: normal;
-    margin-bottom: 8px;
-}
+                <div class="sections">
+                    <p>all these words:</p>
+                    <input type="text" name="as_q"/>
+                    <p class="leftText">Type the important words: tri-colour rat terrier</p>
+                </div>
 
-/* Paragraph Styling */
-p {
-    font-size: 0.9em;
-    width: 200px;
-    line-height: 1.5;
-    color: #333;
-}
+                <div class="sections">
+                    <p>this exact word or phrase:</p>
+                    <input type="text" name="as_epq"/>
+                    <p class="leftText">Put exact words in quotes: "rat terrier"</p>
+                </div>
 
-/* Sections Styling */
-.sections {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-}
+                <div class="sections">
+                    <p>any of these words:</p>
+                    <input type="text" name="as_oq"/>
+                    <p class="leftText">Type OR between all the words you want: miniature OR standard</p>
+                </div>
 
-/* Left Text Styling */
-.leftText {
-    padding-left: 300px;
-    font-size: 0.8em;
-    color: rgb(70, 70, 70);
-}
+                <div class="sections">
+                    <p>none of these words:</p>
+                    <input type="text" name="as_eq"/>
+                    <p class="leftText">Put a minus sign just before words that you don't want: -rodent, -"Jack Russell"</p>
+                </div>
 
-/* Button Styling */
-#button {
-    margin-top: 40px;
-    margin-left: 540px;
-    height: 30px;
-    width: 150px;
-    background-color: dodgerblue;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+                <input id="button" type="submit" value="Advanced Search"/>
+                
+            </form>
 
-#button:hover {
-    background-color: #1e90ff;
-}
+        </div>
+
+
+    </body>
+
+</html>
