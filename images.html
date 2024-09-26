@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Image Search</title>
+    <title>Image Search</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             display: flex;
@@ -11,44 +12,91 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
         }
-        .search-bar {
-            border-radius: 24px;
-            padding: 10px;
+
+        #searchText {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        #searchText a {
+            text-decoration: none;
+            color: #4285F4;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        #searchText a:hover {
+            color: #357ae8;
+        }
+
+        #logo {
+            margin-top: 100px;
+        }
+
+        #logo img {
             width: 300px;
-            border: 1px solid #ccc;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .search-button {
-            margin-top: 10px;
+
+        #form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #searchBar {
+            width: 300px;
+            padding: 10px;
+            border-radius: 24px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttonBelowSearch {
             padding: 10px 20px;
             border: none;
             border-radius: 24px;
             background-color: #4285F4;
             color: white;
             cursor: pointer;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px;
         }
-        .links {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .links a {
-            margin-left: 10px;
-            text-decoration: none;
-            color: #4285F4;
+
+        .buttonBelowSearch: hover {
+            background-color: #357ae8;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <div class="links">
+    <div id="searchText">
         <a href="index.html">Google Search</a>
-        <a href="advanced.html">Advanced Search</a>
+        <a href="advanceSearch.html">Advanced Search</a>
     </div>
-    <form action="https://www.google.com/search">
-        <input type="hidden" name="tbm" value="isch">
-        <input type="text" name="q" class="search-bar" placeholder="Search Images...">
-        <input type="submit" value="Search Images" class="search-button">
-    </form>
+    <div id="logo">
+        <img src="googleLogo.jpg" alt="Google Logo">
+    </div>
+    <div id="form">
+        <form action="https://www.google.com/search?tbm=isch">
+            <input id="searchBar" type="text" name="q" placeholder="Search Images...">
+            <div>
+                <input class="buttonBelowSearch" type="submit" value="Search">
+                <input class="buttonBelowSearch" type="submit" value="I'm Feeling Lucky" onclick="this.form.action='https://www.google.com/search?btnI=I&tbm=isch&q='+document.getElementById('searchBar').value;">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
