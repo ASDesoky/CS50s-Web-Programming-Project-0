@@ -83,20 +83,26 @@
 </head>
 <body>
     <div id="searchText">
-        <a href="imageSearch.html".>Image Search</a>
+        <a href="imageSearch.html">Image Search</a>
         <a href="advanceSearch.html">Advanced Search</a>
     </div>
     <div id="logo">
         <img src="googleLogo.jpg" alt="Google Logo" height="92">
     </div>
     <div id="form">
-        <form action="https://www.google.com/search">
+        <form id="searchForm">
             <input id="searchBar" type="text" name="q" placeholder="Search...">
             <div>
                 <input class="buttonBelowSearch" type="submit" value="Search" class="btn-google">
-                <input class="buttonBelowSearch" type="submit" name="btnI" value="I'm Feeling Lucky" class="btn-google">
+                <input class="buttonBelowSearch" type="button" value="I'm Feeling Lucky" class="btn-google" onclick="feelingLucky()">
             </div>
         </form>
     </div>
+    <script>
+        function feelingLucky() {
+            const query = document.getElementById('searchBar').value;
+            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}&btnI=I`;
+        }
+    </script>
 </body>
 </html>
